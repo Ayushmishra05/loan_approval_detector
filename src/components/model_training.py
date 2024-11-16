@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Dense, Input
 from tensorflow.keras.models import Sequential 
 from src.utils.common import read_yaml
 from typing import Any 
-from src.utils.constants import TARGET_COLUMN
+from src.utils.constants import TARGET_COLUMN, MODEL_FILE_PATH
 import os 
 
 class ModelTraining:
@@ -36,6 +36,7 @@ class ModelTraining:
             logger.info("Model Trained")
             model.save(self.config.model_root_path)
             logger.info("Model has been Saved")
+            model.save(MODEL_FILE_PATH)
             return ModelTrainingArtifacts(
                 model_path= self.config.model_root_path
             )

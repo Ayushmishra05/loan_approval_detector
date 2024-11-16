@@ -49,3 +49,4 @@ def store_json(data, path):
             json.dump(obj=data, fp=fp, indent=4)
     except Exception as e:
         raise e
+    

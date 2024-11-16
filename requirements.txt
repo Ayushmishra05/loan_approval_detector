@@ -13,4 +13,5 @@ mlflow
 dvc 
 dagshub 
 python-dotenv
+flask 
 

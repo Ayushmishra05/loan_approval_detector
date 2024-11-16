@@ -1,0 +1,15 @@
+model:
+  layers: 5 
+  hidden_activation: relu 
+  loss: binary_crossentropy
+  optimizer : adam
+  metrics : accuracy
+  last_activation : sigmoid
+  input_dim : 22 
+  epochs : 5
+  l1units : 256 
+  l2units: 128 
+  l3units : 64 
+  l4units: 32 
+  l5units : 1 
+

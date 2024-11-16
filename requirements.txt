@@ -1,0 +1,16 @@
+tensorflow 
+scikit-learn
+logging 
+pymongo 
+numpy 
+pandas 
+pyyaml 
+keras 
+python-box 
+dataclasses 
+ensure 
+mlflow 
+dvc 
+dagshub 
+python-dotenv
+

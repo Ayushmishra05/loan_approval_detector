@@ -1,0 +1,84 @@
+<html>
+ <head>
+  <title>
+   CredKaro Loan Eligibility
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-900 text-white">
+  <!-- Navigation Bar -->
+  <nav class="bg-black p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <a class="text-2xl font-bold" href="#">
+     CredKaro
+    </a>
+    <ul class="flex space-x-4">
+     <li>
+      <a class="hover:text-gray-400" href="#">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-400" href="#">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-400" href="#">
+       Services
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-400" href="#">
+       Contact
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <!-- Header -->
+  <header class="bg-cover bg-center h-64" style="background-image: url('https://img.freepik.com/free-photo/fantasy-style-galaxy-background_23-2151114323.jpg');">
+   <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
+    <h1 class="text-4xl font-bold">
+     Check Your Loan Eligibility
+    </h1>
+   </div>
+  </header>
+  <!-- Main Content -->
+  <main class="flex items-center justify-center min-h-screen">
+   <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
+    <h1 class="text-2xl font-bold mb-4 text-center">
+     CredKaro Loan Eligibility
+    </h1>
+    <div class="text-center mb-6">
+     <img alt="CredKaro logo, a stylized credit card with a checkmark" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/XNYL2p8Md17gDN0vprdhgaoa7QBlnRfVMb4hNL4P76j7b14JA.jpg" width="100"/>
+     <p class="text-lg">
+      According to your credit card score, you are:
+     </p>
+    </div>
+    <div class="text-center text-xl font-semibold" id="eligibility">
+     <!-- Eligibility message will be inserted here -->
+     {% if eligibility_value == 0 %}
+         <span class="text-red-500">Not Eligible for the Loan</span>
+     {% else %}
+         <span class="text-green-500">Eligible for the Loan</span>
+     {% endif %}
+    </div>
+   </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-black p-4 text-center">
+   <p>
+    © 2023 CredKaro. All rights reserved.
+   </p>
+  </footer>
+</body>
+</html>

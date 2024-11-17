@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1526732928503-5c58853877ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            background-size: cover;
+            color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .form-container {
+            background: rgba(44, 44, 44, 0.9);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-container::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            border: 1px solid #444;
+            background: #3d3d3d;
+            color: #f9f9f9;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #6b7280;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        #result {
+            margin-top: 1.25rem;
+            background-color: #3d3d3d;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2 class="text-2xl font-bold mb-4">Loan Approval Form</h2>
+        <form id="loan-form" method="POST" action="/submit">
+            <div class="form-group">
+                <label for="person_age">Age</label>
+                <input type="number" id="person_age" name="person_age" required>
+            </div>
+            <div class="form-group">
+                <label for="person_income">Income</label>
+                <input type="number" id="person_income" name="person_income" required>
+            </div>
+            <div class="form-group">
+                <label for="person_emp_exp">Employment Experience</label>
+                <input type="number" id="person_emp_exp" name="person_emp_exp" required>
+            </div>
+            <div class="form-group">
+                <label for="loan_amnt">Loan Amount</label>
+                <input type="number" id="loan_amnt" name="loan_amnt" required>
+            </div>
+            <div class="form-group">
+                <label for="loan_int_rate">Interest Rate</label>
+                <input type="number" id="loan_int_rate" name="loan_int_rate" required>
+            </div>
+            <div class="form-group">
+                <label for="loan_percent_income">Loan as Percent of Income</label>
+                <input type="number" id="loan_percent_income" name="loan_percent_income" required>
+            </div>
+            <div class="form-group">
+                <label for="cb_person_cred_hist_length">Credit History Length (Years)</label>
+                <input type="number" id="cb_person_cred_hist_length" name="cb_person_cred_hist_length" required>
+            </div>
+            <div class="form-group">
+                <label for="credit_score">Credit Score</label>
+                <input type="number" id="credit_score" name="credit_score" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="education">Education Level</label>
+                <select id="education" name="education" required>
+                    <option value="Bachelor">Bachelor</option>
+                    <option value="Doctorate">Doctorate</option>
+                    <option value="High School">High School</option>
+                    <option value="Master">Master</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="home_ownership">Home Ownership</label>
+                <select id="home_ownership" name="home_ownership" required>
+                    <option value="OTHER">Other</option>
+                    <option value="OWN">Own</option>
+                    <option value="RENT">Rent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="loan_intent">Loan Intent</label>
+                <select id="loan_intent" name="loan_intent" required>
+                    <option value="EDUCATION">Education</option>
+                    <option value="HOMEIMPROVEMENT">Home Improvement</option>
+                    <option value="MEDICAL">Medical</option>
+                    <option value="PERSONAL">Personal</option>
+                    <option value="VENTURE">Venture</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="previous_loan_defaults">Previous Loan Defaults</label>
+                <input type="checkbox" id="previous_loan_defaults" name="previous_loan_defaults">
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

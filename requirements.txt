@@ -12,3 +12,4 @@ python-dotenv
 PyYAML
 scikit_learn
 tensorflow
+waitress
